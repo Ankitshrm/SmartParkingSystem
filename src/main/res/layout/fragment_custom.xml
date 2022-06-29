@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#f6f6f6"
+    android:padding="5dp"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    tools:context=".CustomFragment">
+
+    <ImageView
+        android:id="@+id/uwon"
+        android:layout_width="350dp"
+        android:layout_gravity="center"
+        android:layout_height="200dp"
+        android:src="@drawable/uwon"
+        android:padding="25dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.007" />
+
+
+    <ImageView
+        android:id="@+id/trophy"
+        android:layout_width="350dp"
+        android:layout_height="270dp"
+        android:padding="25dp"
+        android:src="@drawable/trophy"
+        android:layout_gravity="center_horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.565" />
+
+
+
+    <TextView
+        android:id="@+id/rs500"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/trophy"
+        android:text="You have won bonus of Rs. 500"
+        android:layout_marginTop="5dp"
+        android:textSize="20dp"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/ok"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Ok"
+        android:background="@drawable/bgyellow"
+        app:layout_constraintTop_toBottomOf="@id/rs500"
+        android:textColor="@color/white"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textSize="25dp"
+        />
+
+
+
+
+
+
+</LinearLayout>

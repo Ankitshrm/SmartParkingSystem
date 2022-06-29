@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#FDC313"
+    android:padding="15dp"
+    android:layout_height="match_parent"
+    tools:context=".UserDetails">
+
+    <FrameLayout
+        android:id="@+id/background_signUp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/edittext_bg">
+
+
+    </FrameLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/details_name"
+            android:layout_width="match_parent"
+            android:padding="15dp"
+            android:layout_height="50dp"
+            android:maxLength="15"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/bg_input"
+            android:drawableLeft="@drawable/name_vector"
+            android:drawablePadding="10dp"
+            android:hint="Name"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:paddingLeft="15dp" />
+
+        <EditText
+            android:id="@+id/details_wheels_no"
+            android:layout_width="match_parent"
+            android:padding="15dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="25dp"
+            android:maxLength="8"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/bg_input"
+            android:drawableLeft="@drawable/name_vector"
+            android:drawablePadding="10dp"
+            android:hint="Vehicle Numbers"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:paddingLeft="15dp" />
+
+        <EditText
+            android:id="@+id/details_phone_no"
+            android:layout_width="match_parent"
+            android:padding="15dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/bg_input"
+            android:drawableLeft="@drawable/name_vector"
+            android:drawablePadding="10dp"
+            android:hint="Phone Numbers"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="10"
+            android:paddingLeft="15dp" />
+
+        <TextView
+            android:id="@+id/details_checkinDate"
+            android:layout_width="match_parent"
+            android:padding="15dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="25dp"
+            android:text=""
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/bg_input"
+            android:drawableLeft="@drawable/name_vector"
+            android:drawablePadding="10dp"
+            android:hint="Check-in Date"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:paddingLeft="15dp" />
+
+        <TextView
+            android:id="@+id/details_checkinTime"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/bg_input"
+            android:drawableLeft="@drawable/name_vector"
+            android:drawablePadding="10dp"
+            android:hint="Check-in Time"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:padding="15dp"
+            android:paddingLeft="15dp"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/details_checkoutDate"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/bg_input"
+            android:drawableLeft="@drawable/name_vector"
+            android:drawablePadding="10dp"
+            android:hint="Check-out Date"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:padding="15dp"
+            android:paddingLeft="15dp"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/details_checkoutTime"
+            android:layout_width="match_parent"
+            android:padding="15dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="25dp"
+            android:text=""
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/bg_input"
+            android:drawableLeft="@drawable/name_vector"
+            android:drawablePadding="10dp"
+            android:hint="Check-out Time"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:paddingLeft="15dp" />
+
+        <TextView
+            android:id="@+id/details_choose_wheelers"
+            android:layout_width="match_parent"
+            android:padding="15dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="25dp"
+            android:text=""
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/bg_input"
+            android:drawableLeft="@drawable/name_vector"
+            android:drawablePadding="10dp"
+            android:hint="Choose Wheelers Type"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:paddingLeft="15dp" />
+
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="15dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="25dp"
+            app:cardCornerRadius="15dp"
+            android:layout_marginEnd="15dp"
+            >
+            <TextView
+                android:id="@+id/amountToBePay"
+                android:layout_width="match_parent"
+                android:padding="15dp"
+                android:layout_height="match_parent"
+                android:text="Click Here to know Amount to be Pay"
+                android:background="#0F1631"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:imeOptions="actionDone"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:paddingLeft="15dp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="15dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="25dp"
+            app:cardCornerRadius="15dp"
+            android:layout_marginEnd="15dp"
+            >
+            <TextView
+                android:id="@+id/Pay"
+                android:layout_width="match_parent"
+                android:padding="15dp"
+                android:layout_height="match_parent"
+                android:text="Pay Now"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:background="#FF1100"
+                android:imeOptions="actionDone"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:paddingLeft="15dp" />
+
+        </androidx.cardview.widget.CardView>
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

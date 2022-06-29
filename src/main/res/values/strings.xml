@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">SmartParkingSystem</string>
+    <string name="api_key">AIzaSyCJO9J8WpYrn3tgqZYnqRO0jNixM428B_w</string>
+    <string name="good_morning">Good morning!</string>
+    <string name="what_do_you_want_to_do_today">What do you want to do today?</string>
+    <string name="img1">img1</string>
+    <string name="reserve_a_parking_space">Reserve a parking space</string>
+    <string name="book_in_advance_and_save_money">Book in advance and save money</string>
+    <string name="or">Or</string>
+    <string name="enter_location_id_and_pay">Enter location ID and pay</string>
+    <string name="you_ve_parked_and_you_see_our_sign">You\'ve parked and you see our sign</string>
+    <string name="hybrid">Hybrid</string>
+    <string name="terrain">Terrain</string>
+    <string name="satellite">Satellite</string>
+    <string name="normal">Normal</string>
+    <string name="none">None</string>
+    <string name="check_availability_of_space">Check Availability of Space</string>
+    <string name="click_here_to_check_availability_and_prices">Click Here to Check Availability and prices</string>
+    <string name="check_station_and_book_space">Check Station and Book Space</string>
+    <string name="continue_booking">Continue Booking</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

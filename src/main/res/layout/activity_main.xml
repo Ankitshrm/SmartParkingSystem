@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+   <fragment
+       android:id="@+id/map"
+       android:name="com.google.android.gms.maps.SupportMapFragment"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent" />
+
+<!--   <com.google.android.gms.maps.MapView-->
+<!--       android:id="@+id/map"-->
+<!--       android:name="com.google.android.gms.maps.SupportMapFragment"-->
+<!--       android:layout_width="match_parent"-->
+<!--       android:layout_height="600dp"-->
+<!--       app:layout_constraintBottom_toBottomOf="parent"-->
+<!--       app:layout_constraintEnd_toEndOf="parent"-->
+<!--       app:layout_constraintStart_toStartOf="parent"-->
+<!--       app:layout_constraintTop_toTopOf="parent" />-->
+
+
+
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:id="@+id/cardViewLoc"-->
+<!--        android:layout_weight="9"-->
+<!--        android:layout_marginEnd="15dp"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:layout_gravity="top"-->
+<!--        android:layout_marginTop="45dp"-->
+<!--       android:layout_marginStart="15dp"-->
+<!--        app:cardCornerRadius="10dp"-->
+<!--        android:background="@color/white"-->
+<!--        >-->
+
+<!--    </androidx.cardview.widget.CardView>-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="600dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewSetting"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_gravity="start"
+            app:cardCornerRadius="5dp"
+            android:background="@color/white"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/ETsearchLocation"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:hint="Search Location"
+                    android:layout_weight="9"
+                    android:maxLines="1"
+                    android:minLines="1"
+                    android:lines="1"
+                     android:drawablePadding="15dp"
+                    >
+                </androidx.appcompat.widget.AppCompatEditText>
+
+
+                <ImageView
+                    android:id="@+id/searchIcon"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:layout_height="match_parent"
+                    android:padding="3dp"
+                    android:src="@drawable/search_icon"/>
+                <ImageView
+                    android:id="@+id/searchcon"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:layout_height="match_parent"
+                    android:padding="3dp"
+                    android:src="@drawable/search_icon"/>
+
+
+            </LinearLayout>
+
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/maptype"
+            android:layout_width="40dp"
+           android:layout_below="@+id/cardViewSetting"
+            android:layout_marginEnd="15dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:layout_alignParentEnd="true"
+            app:cardCornerRadius="25dp"
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="8dp"
+                android:src="@drawable/maptype"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/myLocation"
+            android:layout_width="40dp"
+            android:layout_below="@+id/maptype"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            app:cardCornerRadius="25dp"
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="8dp"
+                android:src="@drawable/mylocation"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <SearchView
+            android:id="@+id/ETsearchLocations"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/myLocation"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:background="@color/white" />
+
+
+
+
+
+    </RelativeLayout>
+   <include
+       layout="@layout/item_bottomsheet"
+       />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
