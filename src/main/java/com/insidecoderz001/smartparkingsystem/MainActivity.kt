@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
 
     }
 
-    lateinit var ETsearchLocations :SearchView
+    lateinit var profile:ImageView
     lateinit var payCard_txt:TextView
     lateinit var txt_info:TextView
     lateinit var gudmrng:TextView
@@ -100,6 +100,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         ids()
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
@@ -109,11 +110,14 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
         initMap()
         bottomsheetPanel()
         maptypeChange()
-        ETsearchLocations.setOnClickListener(this::geoLocate)
+        ETsearchLocation.setOnClickListener(this::geoLocate)
         findMyLocation()
 
         myLocationClient = FusedLocationProviderClient( this)
 
+        profile.setOnClickListener {
+
+        }
 
         yourBooking.setOnClickListener {
             startActivity(Intent(this,BookingDashboard::class.java))
@@ -191,7 +195,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
     }
     private fun geoLocate(view :View) {
         hideSoftKeyboard(view)
-        val locationName =ETsearchLocations.query.toString()
+        val locationName =ETsearchLocation.text.toString()
         val geocoder :Geocoder= Geocoder(this, Locale.getDefault())
         try {
             val addressList :List<Address> =geocoder.getFromLocationName(locationName,1)
@@ -311,6 +315,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
         }
     }
     private fun ids() {
+        profile =findViewById(R.id.profile)
         backToPrev=findViewById(R.id.backToPrev)
         linearLayout=findViewById(R.id.linearLayout)
         payCard2=findViewById(R.id.payCard2)
@@ -327,7 +332,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
         yourBooking=findViewById(R.id.yourBooking)
         bookCard=findViewById(R.id.BookCard)
         payCard_txt=findViewById(R.id.payCard_txt)
-        ETsearchLocations=findViewById(R.id.ETsearchLocations)
     }
     private fun gotoLoaction(lat: Double, lng: Double){
         val targetLocation = LatLng(lat,lng)

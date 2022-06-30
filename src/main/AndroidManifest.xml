@@ -15,8 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/SplashTheme.SmartParkingSystem">
         <activity
-            android:name=".BonusPage"
+            android:name=".ProfileActviity"
             android:exported="false" />
+
         <activity
             android:name=".BookingDashboard"
             android:exported="false" />
