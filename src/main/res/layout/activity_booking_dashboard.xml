@@ -5,30 +5,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F4F4F4"
     tools:context=".BookingDashboard">
 
-    <LinearLayout
-        android:id="@+id/topll"
+    <TextView
+        android:id="@+id/txtBooking"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:layout_alignParentTop="true"
-        >
-        <ImageView
-            android:id="@+id/close"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:src="@drawable/close"
-            >
-        </ImageView>
+        android:text="Your Bookings"
+        android:layout_marginStart="10dp"
+        android:textStyle="bold"
+        android:layout_marginTop="35dp"
+        android:textSize="30dp"
+        />
 
-    </LinearLayout>
+
 
     <LinearLayout
+        android:layout_below="@+id/txtBooking"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
         android:orientation="vertical"
-        android:layout_below="@id/topll"
         >
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvBill"

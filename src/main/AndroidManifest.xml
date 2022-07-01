@@ -22,12 +22,15 @@
             android:name=".BookingDashboard"
             android:exported="false" />
         <activity
+
             android:name=".UserDetails"
             android:exported="false" />
+
         <activity
             android:name=".AvailablilityCheck"
             android:exported="false"
             android:noHistory="true" />
+
         <activity
             android:name=".SignUp"
             android:exported="false"

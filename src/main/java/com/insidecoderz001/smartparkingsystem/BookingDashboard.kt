@@ -1,12 +1,13 @@
 package com.insidecoderz001.smartparkingsystem
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
+import com.google.firebase.database.ktx.getValue
+import java.text.SimpleDateFormat
 import java.util.*
 
 
@@ -16,7 +17,10 @@ class BookingDashboard : AppCompatActivity() {
     private lateinit var database :DatabaseReference
     private lateinit var myArrayList:ArrayList<BookingHistory>
     private lateinit var myAdapter: MyAdapter
-    lateinit var close:ImageView
+
+    companion object{
+        const val phoneNum = ""
+    }
 
 
 
@@ -24,11 +28,18 @@ class BookingDashboard : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_booking_dashboard)
 
+        val myNum:String? =intent.getStringExtra(phoneNum)
+
+
+
         myRecyclerview =findViewById(R.id.rvBill)
-        close =findViewById(R.id.close)
-        database =FirebaseDatabase.getInstance().getReference("BookingDetails")
+        database =FirebaseDatabase.getInstance().getReference("mybooking")
         myRecyclerview.setHasFixedSize(true)
         myRecyclerview.layoutManager =LinearLayoutManager(this)
+
+        val sdf :SimpleDateFormat = SimpleDateFormat("dd/MM/yyyy HH:mm")
+        val curr =sdf.format(Date())
+
 
         myArrayList=ArrayList()
         myAdapter=MyAdapter(this,myArrayList)
@@ -47,14 +58,7 @@ class BookingDashboard : AppCompatActivity() {
             }
 
         })
-
-
-        close.setOnClickListener {
-            startActivity(Intent(this,MainActivity::class.java))
-        }
-
-
-
+        database.orderByChild("newDate").startAt(curr)
 
 
     }

@@ -9,6 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.PopupMenu
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import java.text.ParseException
@@ -18,6 +19,7 @@ import java.util.*
 
 class UserDetails : AppCompatActivity() {
 
+    lateinit var myBalance:TextView
     lateinit var details_checkinDate:TextView
     lateinit var amountToBePay:TextView
     lateinit var details_checkoutDate:TextView
@@ -36,6 +38,7 @@ class UserDetails : AppCompatActivity() {
     var  ans =0
 
 
+
     private lateinit var database :DatabaseReference
 
     companion object {
@@ -49,6 +52,8 @@ class UserDetails : AppCompatActivity() {
 
         ids()
         date_time()
+
+        myBalance.text ="120"
 
         details_choose_wheelers.setOnClickListener {
             val popupMenu = PopupMenu(this,details_choose_wheelers)
@@ -67,9 +72,6 @@ class UserDetails : AppCompatActivity() {
             popupMenu.show()
         }
         wheelersStatus = details_choose_wheelers.text.toString()
-
-        val temp =amountToBePay.text.toString()
-
 
         amountToBePay.setOnClickListener {
 
@@ -134,6 +136,8 @@ class UserDetails : AppCompatActivity() {
                 var rand:Random = Random()
                 var bid:String = (rand.nextInt(999999-100000)+100000).toString()
 
+
+               val phoneNum = details_phone_no.text.toString()
                 val bidId = bid
                 val checkOT =checkOutTime
                 val checkIT =checkInTime
@@ -141,22 +145,22 @@ class UserDetails : AppCompatActivity() {
                 val checkID =checkInDate
                 val amount =ans.toString()
 
-                database = FirebaseDatabase.getInstance().getReference("BookingDetails")
-                val Booking =BookingHistory(bidId,checkOT,checkIT,checkOD,checkID,amount)
-                database.child(bidId).setValue(Booking).addOnSuccessListener {
+                database = FirebaseDatabase.getInstance().getReference("mybooking")
+                val booking =BookingHistory(phoneNum,bidId,checkID,checkIT,checkOD,checkOT,amount)
+                database.child(phoneNum).setValue(booking).addOnSuccessListener {
                         Toast.makeText(this,"Your booking Id is $bidId",Toast.LENGTH_LONG).show()
                 }.addOnFailureListener {
                     Toast.makeText(this,"Something went wrong xd",Toast.LENGTH_SHORT).show()
                 }
-
-
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, BookingDashboard::class.java)
+                intent.putExtra(BookingDashboard.phoneNum,phoneNum)
                 startActivity(intent)
             }
         }
     }
 
     private fun ids() {
+
         details_checkinDate=findViewById(R.id.details_checkinDate)
         details_checkoutDate=findViewById(R.id.details_checkoutDate)
         details_checkinTime=findViewById(R.id.details_checkinTime)
@@ -183,7 +187,6 @@ class UserDetails : AppCompatActivity() {
             checkingDatePick()
         }
     }
-
     private fun checkoutTimePick() {
         val c=Calendar.getInstance()
             val ts =TimePickerDialog.OnTimeSetListener { timePicker, hour, minute ->

@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#F4F4F4"
     android:layout_height="match_parent"
     tools:context=".AvailablilityCheck">
 
@@ -40,9 +41,11 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:padding="5dp"
             android:orientation="vertical">
             <TextView
                 android:padding="2dp"
+                android:gravity="center"
                 android:id="@+id/LocName"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
@@ -69,6 +72,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:padding="15dp"
                     android:orientation="vertical">
                     <TextView
                         android:padding="2dp"
@@ -96,63 +100,18 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
                     <TextView
-                        android:padding="2dp"
-                        android:id="@+id/available_space"
-                        android:layout_width="0dp"
-                        android:layout_weight="6"
-                        android:layout_height="40dp"
-                        android:text="Available space : "
-                        android:gravity="center"
-                        android:textSize="16sp"
-                        android:textColor="@color/black"
-                        />
-                    <TextView
-                        android:padding="2dp"
-                        android:id="@+id/availableValue"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:layout_weight="4"
-                        android:text=" "
-                        android:gravity="center"
-                        android:textSize="16sp"
-                        android:textColor="@color/black"
-                        />
-                </LinearLayout>
-                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-                        <TextView
-                            android:padding="2dp"
-                            android:id="@+id/occupied_space"
-                            android:layout_width="0dp"
-                            android:layout_weight="6"
-                            android:layout_height="40dp"
-                            android:text="Occupied space : "
-                            android:gravity="center"
-                            android:textSize="16sp"
-                            android:textColor="@color/black"
-                            />
-                        <TextView
-                            android:padding="2dp"
-                            android:id="@+id/OccupiedValue"
-                            android:layout_width="0dp"
-                            android:layout_height="40dp"
-                            android:layout_weight="4"
-                            android:text=" "
-                            android:gravity="center"
-                            android:textSize="16sp"
-                            android:textColor="@color/black"
-                            />
-                    </LinearLayout>
+                        android:layout_height="wrap_content"
+                        android:text="Price of parking"
+                        android:textAlignment="center"
+                        android:padding="15dp"
+                        android:textSize="15dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        >
+                    </TextView>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -164,7 +123,7 @@
                             android:layout_width="0dp"
                             android:layout_weight="6"
                             android:layout_height="40dp"
-                            android:text="2 Wheels : "
+                            android:text="2 Wheelers ( In Rs. ) : "
                             android:gravity="center"
                             android:textSize="16sp"
                             android:textColor="@color/black"
@@ -192,7 +151,7 @@
                             android:layout_width="0dp"
                             android:layout_weight="6"
                             android:layout_height="40dp"
-                            android:text="4 Wheels : "
+                            android:text="4 Wheelers ( In Rs. ) : "
                             android:gravity="center"
                             android:textSize="16sp"
                             android:textColor="@color/black"

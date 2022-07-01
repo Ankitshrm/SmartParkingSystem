@@ -110,13 +110,14 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
         initMap()
         bottomsheetPanel()
         maptypeChange()
-        ETsearchLocation.setOnClickListener(this::geoLocate)
+        searchIcon.setOnClickListener(this::geoLocate)
         findMyLocation()
 
         myLocationClient = FusedLocationProviderClient( this)
 
         profile.setOnClickListener {
-
+            val intent =Intent(this,ProfileActviity::class.java)
+            startActivity(intent)
         }
 
         yourBooking.setOnClickListener {
@@ -194,19 +195,22 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
         }
     }
     private fun geoLocate(view :View) {
-        hideSoftKeyboard(view)
-        val locationName =ETsearchLocation.text.toString()
         val geocoder :Geocoder= Geocoder(this, Locale.getDefault())
-        try {
-            val addressList :List<Address> =geocoder.getFromLocationName(locationName,1)
-            if (addressList.size>0){
-                val address  :Address = addressList[0]
-                gotoLoaction(address.latitude,address.longitude)
-                mMap.addMarker(MarkerOptions().position(LatLng(address.latitude,address.longitude)).title(address.toString()))
-            }
-        }catch(e:Exception){
-            e.printStackTrace()
+
+            val locationName =ETsearchLocation.text.toString()
+            hideSoftKeyboard(view)
+            try {
+                val addressList :List<Address> =geocoder.getFromLocationName(locationName,1)
+                if (addressList.size>0){
+                    val address  :Address = addressList[0]
+                    gotoLoaction(address.latitude,address.longitude)
+                    mMap.addMarker(MarkerOptions().position(LatLng(address.latitude,address.longitude)).title(address.toString()))
+                }
+            }catch(e:Exception){
+                e.printStackTrace()
+
         }
+
     }
     private fun hideSoftKeyboard(view: View) {
         val imm :InputMethodManager =getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager

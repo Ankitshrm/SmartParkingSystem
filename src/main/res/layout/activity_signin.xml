@@ -52,37 +52,34 @@ tools:context=".SignIn">
     >
 </TextView>
 
-<EditText
-    android:id="@+id/email_signin"
-    android:layout_width="300dp"
-    android:background="@drawable/edittext_bg"
-    android:drawableLeft="@drawable/email"
-    android:layout_height="40dp"
-    android:drawablePadding="10dp"
-    android:paddingLeft="15dp"
-    android:inputType="textEmailAddress"
-    android:layout_centerHorizontal="true"
-    android:layout_marginTop="25dp"
-    android:hint="Email"
-    android:layout_below="@+id/text_detail1_signin"
-    >
-</EditText>
+    <EditText
+        android:id="@+id/email_signin"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/text_detail1_signin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/edittext_bg"
+        android:drawableLeft="@drawable/email"
+        android:drawablePadding="10dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="15dp"></EditText>
 
-<EditText
-    android:id="@+id/password_signin"
-    android:layout_width="300dp"
-    android:drawablePadding="10dp"
-    android:paddingLeft="15dp"
-    android:layout_height="40dp"
-    android:background="@drawable/edittext_bg"
-    android:drawableLeft="@drawable/password_vector"
-    android:inputType="textPassword"
-    android:layout_centerHorizontal="true"
-    android:layout_marginTop="25dp"
-    android:hint="Password"
-    android:layout_below="@+id/email_signin"
-    >
-</EditText>
+    <EditText
+        android:id="@+id/password_signin"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/email_signin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/edittext_bg"
+        android:drawableLeft="@drawable/password_vector"
+        android:drawablePadding="10dp"
+        android:hint="Password"
+        android:maxLength="16"
+        android:inputType="textPassword"
+        android:paddingLeft="15dp"/>
 
 <TextView
     android:id="@+id/btn_signin"
